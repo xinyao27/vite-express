@@ -1,0 +1,19 @@
+# This is a config for E2B sandbox template.
+# You can use template ID (pa0uwb0uymnncsyg51a5) or template name (vite-express) to create a sandbox:
+
+# Python SDK
+# from e2b import Sandbox, AsyncSandbox
+# sandbox = Sandbox("vite-express") # Sync sandbox
+# sandbox = await AsyncSandbox.create("vite-express") # Async sandbox
+
+# JS SDK
+# import { Sandbox } from 'e2b'
+# const sandbox = await Sandbox.create('vite-express')
+
+team_id = "3aa1dd6b-4c08-4bf9-b92e-deaa339650ae"
+memory_mb = 2_048
+cpu_count = 2
+start_cmd = "/compile.sh"
+dockerfile = "e2b.Dockerfile"
+template_name = "vite-express"
+template_id = "pa0uwb0uymnncsyg51a5"
