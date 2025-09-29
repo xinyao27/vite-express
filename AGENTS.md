@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-The stack couples a Vite React client with an Express server launched from `server.ts`. Entry logic lives in `src/main.tsx`, with the shared shell in `src/App.tsx`. Feature UI resides in `src/components`, hooks in `src/hooks`, and cross-cutting helpers in `src/lib`. Server middleware and routes sit under `src/server`. Static files stay in `public`, while builds target `dist/client` for the client bundle and `dist/server` for SSR output.
+The stack couples a Vite React client with an Express server launched from `server/index.ts`. Entry logic lives in `src/main.tsx`, with the shared shell in `src/app.tsx`. Feature UI resides in `src/components`, hooks in `src/hooks`, and cross-cutting helpers in `src/lib`. Server middleware and routes sit under `server/`. API routes should be written in `server/api/index.ts`. Static files stay in `public`, while builds target `dist/client` for the client bundle and `dist/server` for SSR output.
 
 <project_structure>
 
@@ -16,7 +16,12 @@ The stack couples a Vite React client with an Express server launched from `serv
 ├── index.html
 ├── package.json
 ├── public
-├── server.mjs
+│   └── vite.svg
+├── server
+│   ├── api
+│   │   └── index.ts
+│   ├── entry-server.tsx
+│   └── index.ts
 ├── src
 │   ├── app.tsx
 │   ├── assets
@@ -24,19 +29,14 @@ The stack couples a Vite React client with an Express server launched from `serv
 │   ├── components
 │   │   └── ui
 │   ├── entry-client.tsx
-│   ├── entry-server.tsx
 │   ├── hooks
+│   │   └── use-mobile.ts
 │   ├── index.css
 │   ├── lib
 │   │   └── utils.ts
 │   ├── main.tsx
-│   ├── server
-│   │   ├── api
-│   │   │   └── index.ts
-│   │   └── index.ts
 │   └── vite-env.d.ts
 ├── tsconfig.json
-├── tsconfig.node.json
 └── vite.config.ts
 ```
 
