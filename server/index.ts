@@ -64,6 +64,11 @@ app.use("*all", async (req, res) => {
 
     const rendered = await render(url);
 
+    if (rendered.redirectTo) {
+      res.redirect(rendered.redirectTo);
+      return;
+    }
+
     const html = template
       .replace(`<!--app-head-->`, rendered.head ?? "")
       .replace(`<!--app-html-->`, rendered.html ?? "");
